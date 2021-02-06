@@ -1,0 +1,51 @@
+.main_style{
+    margin-top: 3rem;
+}
+
+.search-bar{
+    height: 5.5vh;
+    outline: none;
+    padding: 5px;
+    border: 1px solid rgb(108, 136, 160);
+}
+.create-note{
+    position: absolute;
+    top: 15vh;
+    left: 5vw;
+    padding: 1.5em;
+    border-radius: 3px;
+    background-color: white;
+    width: 90%;
+    border: 1px solid rgb(170, 169, 169);
+    z-index: 1;
+}
+.note{   
+    padding: 15px;
+    border-radius: 3px;
+    border: 1px solid rgb(170, 169, 169);
+}
+.head{
+    padding: 10px 0;
+    letter-spacing: 1px;
+    justify-content: space-between !important;
+}
+.left{
+    justify-content: flex-start !important;
+}
+.title,
+.tags,
+.content{
+    width: 100%;
+    border: 1px solid rgb(170, 169, 169);
+    outline-color: rgb(45, 126, 219, 0.5);
+}
+
+p{
+    margin-top: 5px;
+    font-size: 15px;
+}
+
+.note-btn{
+    justify-content: flex-end !important;
+    margin: 1em 0;
+}
