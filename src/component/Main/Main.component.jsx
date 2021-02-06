@@ -47,7 +47,7 @@ const Main = (props) =>  {
                 title: "",
                 content: "",
                 tag: "",
-                time: time
+                // time: time
             });
             setExpand(false);
         }
@@ -61,7 +61,7 @@ const Main = (props) =>  {
             <input 
                 type='search'
                 placeholder='Search for note by title...' 
-                size='60' 
+                size='85' 
                 className='search-bar'
             />
             <Button variant="contained" color="primary">

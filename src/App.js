@@ -25,23 +25,28 @@ function App() {
       <Banner />
       <Main passNote={addNote}/>
       <table className='table'>
-        <tr>
-          <th colSpan='2'></th>
-          <th>Title</th>
-          <th>Content</th>
-          <th>Updated Date</th>
-        </tr>
-        {addItem.map((val, index)=>{
-          return (
-            <TableContent
-              key={index}
-              id={index}
-              title={val.title}
-              content={val.content}
-              deleteItem={onDelete}
-            />
-          );
-      })}
+        <thead>
+          <tr>
+            <th colSpan='2'></th>
+            <th>Title</th>
+            <th>Content</th>
+            <th>Updated Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          {addItem.map((val, index)=>{
+            return (
+              <TableContent
+                key={index}
+                id={index}
+                title={val.title}
+                content={val.content}
+                time={val.time}
+                deleteItem={onDelete}
+              />
+            );
+          })}
+      </tbody>
       </table>
     </div>
   );
