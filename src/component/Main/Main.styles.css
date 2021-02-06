@@ -1,14 +1,15 @@
-.main_style{
+.main_style {
     margin-top: 3rem;
 }
 
-.search-bar{
+.search-bar {
     height: 5.5vh;
     outline: none;
     padding: 5px;
     border: 1px solid rgb(108, 136, 160);
 }
-.create-note{
+
+.create-note {
     position: absolute;
     top: 15vh;
     left: 5vw;
@@ -19,33 +20,49 @@
     border: 1px solid rgb(170, 169, 169);
     z-index: 1;
 }
-.note{   
+
+.note {
     padding: 15px;
     border-radius: 3px;
     border: 1px solid rgb(170, 169, 169);
 }
-.head{
+
+.head {
     padding: 10px 0;
     letter-spacing: 1px;
     justify-content: space-between !important;
 }
-.left{
+
+.left {
     justify-content: flex-start !important;
 }
+
+.title-err,
+.content-err
+{
+    margin-bottom: 18px;
+    padding: 8px;
+    background-color: rgb(206, 143, 143, 0.5);
+    color: rgb(206, 50, 50);
+    border: 1px solid rgb(214, 100, 100);
+    justify-content: space-between !important;
+}
+
 .title,
 .tags,
-.content{
+.content {
     width: 100%;
+    padding: 5px;
     border: 1px solid rgb(170, 169, 169);
     outline-color: rgb(45, 126, 219, 0.5);
 }
 
-p{
+p {
     margin-top: 5px;
     font-size: 15px;
 }
 
-.note-btn{
+.note-btn {
     justify-content: flex-end !important;
     margin: 1em 0;
 }
