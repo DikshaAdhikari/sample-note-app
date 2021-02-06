@@ -19,7 +19,7 @@ function App() {
       })
     );
   };
-
+  
   return (
     <div>
       <Banner />
@@ -41,7 +41,7 @@ function App() {
                 id={index}
                 title={val.title}
                 content={val.content}
-                time={val.time}
+                date={val.date}
                 deleteItem={onDelete}
               />
             );

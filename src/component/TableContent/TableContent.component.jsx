@@ -13,7 +13,7 @@ const TableContent = (props) => {
                 <td><DeleteOutlineIcon onClick={deleteNote}/></td>
                 <td>{props.title}</td>
                 <td>{props.content}</td>
-                <td>{props.time}</td>
+                <td>{props.date}</td>
             </tr>
         </>
     )

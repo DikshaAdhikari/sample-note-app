@@ -14,16 +14,14 @@ const Main = (props) =>  {
     const [showContent, setShowContent] = useState(false);
     const [note, setNote] = useState({
         title: "",
-        content: "",
-        tag: "",
-        time: ""
+        content: ""
     });
+    
 
     const modal = () => setExpand(true);
     const Shrink = () => setExpand(false);
     const hideContentErr = () => setShowContent(false);
     const hideTitleErr = () => setShowTitle(false);
-
     const inputEvent = (e) => {
         const {value, name} = e.target;
 
@@ -41,17 +39,16 @@ const Main = (props) =>  {
             if(note.content=="") setShowContent(true);
             else setShowContent(false);
         }else {
-            var time = new Date();
             props.passNote(note);
             setNote({
                 title: "",
                 content: "",
-                tag: "",
-                // time: time
+                date: new Date().toLocaleString()
             });
             setExpand(false);
         }
     };
+
     return (
         <>
         <div className = 'main_style flex'>
@@ -64,7 +61,7 @@ const Main = (props) =>  {
                 size='85' 
                 className='search-bar'
             />
-            <Button variant="contained" color="primary">
+            <Button variant="contained" color="primary" >
                 <SearchIcon />
             </Button>
         </div>

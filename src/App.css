@@ -26,3 +26,6 @@ td, th{
 tbody{
   font-size: 0.8rem;
 }
+tr:hover{
+  background-color: rgb(207, 195, 195, 0.5);
+}
