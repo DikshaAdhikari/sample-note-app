@@ -18,19 +18,12 @@ const Main = (props) =>  {
         date: ""
     });
     const [find, setFind] = useState("");
-    const [string, setString] =useState("");
 
     const searchEvent = (e) => {
         setFind(e.target.value)
     }
-    const filterSearch = (id) => {
-        setString(find);
-        props.passSearch();
-        setNote((data)=>
-            data.filter((curData, index)=>{
-            if(note.title.toLowerCase().includes(find.toLowerCase()))
-             return index!==id;
-        }));
+    const filterSearch = () => {
+        props.passSearch(find); 
     }
     
 
@@ -64,6 +57,8 @@ const Main = (props) =>  {
                 date: ""
             });
             setExpand(false);
+            setShowContent(false);
+            setShowTitle(false);
         }
     };
 
@@ -75,8 +70,7 @@ const Main = (props) =>  {
             </Button>
             <input 
                 type='search'
-                placeholder='Search for note by title...' 
-                size='85' 
+                placeholder='Search for note by title...'
                 name='search'
                 value={find}
                 onChange={searchEvent}

@@ -14,7 +14,7 @@
 }
 
 .table{
-  width: 55%;
+  width: 60%;
   margin: 10px auto;
   border-collapse: collapse;
 }
@@ -29,4 +29,10 @@ tbody{
 
 tr:hover{
   background-color: rgb(207, 195, 195, 0.5);
+}
+
+@media only screen and (max-width: 500px){
+  .table{
+    width: 90%;
+  }
 }

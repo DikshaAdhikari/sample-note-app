@@ -19,8 +19,17 @@ function App() {
       })
     );
   };
-  const addSearch = (val) =>{
-  
+  const onEdit = (id) => {
+    alert(id);
+  }
+  const addSearch = () =>{
+    addItem.map(( el, id)=>{ 
+      if(el.title.toLowerCase().includes(("form").toLowerCase())){  
+        setAddItem((olddata)=>
+          olddata.filter((curData, index)=>{
+            return index===id;
+        }))}
+    })
   }
   return (
     <div>
@@ -44,6 +53,7 @@ function App() {
                 title={val.title}
                 content={val.content}
                 date={val.date}
+                editItem={onEdit}
                 deleteItem={onDelete}
               />
             );
