@@ -19,11 +19,13 @@ function App() {
       })
     );
   };
+  const addSearch = (val) =>{
   
+  }
   return (
     <div>
       <Banner />
-      <Main passNote={addNote}/>
+      <Main passNote={addNote} passSearch={addSearch}/>
       <table className='table'>
         <thead>
           <tr>
@@ -45,7 +47,7 @@ function App() {
                 deleteItem={onDelete}
               />
             );
-          })}
+          }).reverse()}
       </tbody>
       </table>
     </div>

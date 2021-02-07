@@ -14,8 +14,24 @@ const Main = (props) =>  {
     const [showContent, setShowContent] = useState(false);
     const [note, setNote] = useState({
         title: "",
-        content: ""
+        content: "",
+        date: ""
     });
+    const [find, setFind] = useState("");
+    const [string, setString] =useState("");
+
+    const searchEvent = (e) => {
+        setFind(e.target.value)
+    }
+    const filterSearch = (id) => {
+        setString(find);
+        props.passSearch();
+        setNote((data)=>
+            data.filter((curData, index)=>{
+            if(note.title.toLowerCase().includes(find.toLowerCase()))
+             return index!==id;
+        }));
+    }
     
 
     const modal = () => setExpand(true);
@@ -28,10 +44,12 @@ const Main = (props) =>  {
         setNote((prev) => {
             return{
                 ...prev,
+                date: new Date().toLocaleString(),
                 [name]: value
             };
         });
     };
+    
     const addEvent = () => {
         if((note.title=="") || (note.content=="")){
             if(note.title=="") setShowTitle(true);
@@ -43,7 +61,7 @@ const Main = (props) =>  {
             setNote({
                 title: "",
                 content: "",
-                date: new Date().toLocaleString()
+                date: ""
             });
             setExpand(false);
         }
@@ -59,10 +77,13 @@ const Main = (props) =>  {
                 type='search'
                 placeholder='Search for note by title...' 
                 size='85' 
+                name='search'
+                value={find}
+                onChange={searchEvent}
                 className='search-bar'
             />
-            <Button variant="contained" color="primary" >
-                <SearchIcon />
+            <Button variant="contained" color="primary" onClick={filterSearch}>
+                    <SearchIcon />
             </Button>
         </div>
         {expand?
