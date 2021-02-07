@@ -22,13 +22,14 @@ function App() {
   const onEdit = (id) => {
     alert(id);
   }
-  const addSearch = () =>{
+  const addSearch = (find) =>{
     addItem.map(( el, id)=>{ 
-      if(el.title.toLowerCase().includes(("form").toLowerCase())){  
+      if(el.title.toLowerCase().includes((find).toLowerCase())){  
         setAddItem((olddata)=>
           olddata.filter((curData, index)=>{
             return index===id;
-        }))}
+        }))
+      }
     })
   }
   return (
@@ -55,7 +56,7 @@ function App() {
                 date={val.date}
                 editItem={onEdit}
                 deleteItem={onDelete}
-              />
+              />              
             );
           }).reverse()}
       </tbody>

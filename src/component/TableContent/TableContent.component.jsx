@@ -6,7 +6,7 @@ import './TableContent.styles.css';
 const TableContent = (props) => {
     const editNote = () => props.editItem(props.id);
     const deleteNote = () => props.deleteItem(props.id); 
-
+    
     return(
         <>
             <tr>
@@ -16,6 +16,9 @@ const TableContent = (props) => {
                 <td>{props.content}</td>
                 <td>{props.date}</td>
             </tr>
+            
+                
+            
         </>
     )
 }

@@ -25,10 +25,13 @@ const Main = (props) =>  {
     const filterSearch = () => {
         props.passSearch(find); 
     }
-    
 
     const modal = () => setExpand(true);
-    const Shrink = () => setExpand(false);
+    const Shrink = () =>{
+        setShowContent(false);
+        setShowTitle(false);
+        setExpand(false);
+    }
     const hideContentErr = () => setShowContent(false);
     const hideTitleErr = () => setShowTitle(false);
     const inputEvent = (e) => {
@@ -56,6 +59,7 @@ const Main = (props) =>  {
                 content: "",
                 date: ""
             });
+            
             setExpand(false);
             setShowContent(false);
             setShowTitle(false);
