@@ -9,6 +9,7 @@ import SaveSharpIcon from '@material-ui/icons/SaveSharp';
 import "./Main.styles.css";
 
 const Main = (props) =>  {
+    // declaring useState variables
     const [expand, setExpand] = useState(false);
     const [showTitle, setShowTitle] = useState(false);
     const [showContent, setShowContent] = useState(false);
@@ -19,14 +20,13 @@ const Main = (props) =>  {
     });
     const [find, setFind] = useState("");
 
+    // defining all the functions that are to be used in main component at different places
     const searchEvent = (e) => {
         setFind(e.target.value)
     }
-    const filterSearch = () => {
-        props.passSearch(find); 
-    }
-
+    const filterSearch = () => props.passSearch(find); 
     const modal = () => setExpand(true);
+    
     const Shrink = () =>{
         setShowContent(false);
         setShowTitle(false);

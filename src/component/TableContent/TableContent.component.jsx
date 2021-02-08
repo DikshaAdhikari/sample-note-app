@@ -4,9 +4,9 @@ import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline';
 import './TableContent.styles.css';
 
 const TableContent = (props) => {
-    const editNote = () => props.editItem(props.id);
-    const deleteNote = () => props.deleteItem(props.id); 
-    
+    // edit and delete notes
+    const editNote = () => props.editItem(props.id)
+    const deleteNote = () => props.deleteItem(props.id);  
     return(
         <>
             <tr>

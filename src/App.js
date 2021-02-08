@@ -2,16 +2,23 @@ import React, {useState} from 'react';
 import Banner from './component/Banner/Banner.component';
 import Main from './component/Main/Main.component';
 import TableContent from './component/TableContent/TableContent.component';
-
+import useLocalStorage from './useLocalStorage';
 import './App.css';
 
 function App() {
-  const [addItem, setAddItem] = useState([]);
+  const [addItem, setAddItem] = useLocalStorage('notes',[{
+    title: 'Web Development',
+    content: 'Learning ReactJS and sharpening frontend skills',
+    date:'2/8/2021, 7:05:48 AM'
+  }]);
+  // adding notes on save button click
   const addNote = (note) => {
     setAddItem((old)=> {
       return [...old, note];
     });
   };
+
+  // deleting a particular id
   const onDelete = (id) => {
     setAddItem((olddata)=>
       olddata.filter((curData, index)=>{
@@ -19,9 +26,13 @@ function App() {
       })
     );
   };
+
+  // edit function 
   const onEdit = (id) => {
-    alert(id);
+    alert("edit property disabled");
   }
+  
+  // filtering on search
   const addSearch = (find) =>{
     addItem.map(( el, id)=>{ 
       if(el.title.toLowerCase().includes((find).toLowerCase())){  
