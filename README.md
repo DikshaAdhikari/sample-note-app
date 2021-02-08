@@ -10,7 +10,7 @@ The app is made responsive and has an optimal layout.
 
 ### Demo
 
-![](noteApp-gif)
+![](noteApp-gif.gif)
 
 
 ### Deployment
